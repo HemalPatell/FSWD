@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for rounded images and other styles */
+        .rounded-img {
+            border-radius: 50%;
+            /* Make images circular */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the circle */
+        }
+
+        /* Example: Style the side navbar */
+        #side-navbar {
+            width: 200px;
+            /* Adjust as needed */
+            background-color: #f8f0f8;
+            /* Light lavender background for navbar */
+            position: fixed;
+            /* Fixed sidebar */
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 20px;
+        }
+
+        #side-navbar a {
+            display: block;
+            /* Make links stack vertically */
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            /* Darker text */
+        }
+
+        #side-navbar a:hover {
+            color: #70448f;
+            /* Darker lavender on hover */
+        }
+
+        /* Example: Style the main content area */
+        #main-content {
+            margin-left: 220px;
+            /* Adjust to match navbar width + padding */
+            padding: 20px;
+        }
+
+        /* Example: Style the hero section */
+        #hero {
+            background-color: #fff;
+            /* White background */
+            padding: 4rem 0;
+        }
+
+        .lavender-bg {
+            background-color: #e6c8e9;
+        }
+
+        .lavender-text {
+            color: #70448f;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+
+    <div id="side-navbar">
+        <img src="your-profile-pic.jpg" alt="Your Profile" class="rounded-img w-32 h-32 mx-auto mb-4"> <a
+            href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="main-content">
+        <section id="hero" class="text-center py-20">
+            <div class="container mx-auto">
+                <h1 class="text-5xl font-bold mb-4 lavender-text">Hi, I'm Hemal Patel</h1>
+                <p class="text-2xl mb-8">Innovating the Future, One Line of Code at a Time</p>
+                <a href="#projects"
+                    class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-12 lavender-bg">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4 lavender-text ml-3">About Me</h2>
+                <p class="text-l mb-8 ml-2">Results-driven IT professional with expertise in [mention 1-2 key skills, e.g., cloud computing,
+                    cybersecurity]. Passionate about leveraging technology to solve complex business challenges.</p>
+                <img src="about-image.jpeg" alt="About Image" class="squre-img w-408 h-80 mx-auto mt-4">
+            </div>
+        </section>
+
+        <section id="projects" class="py-12">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-4 lavender-text">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="project1.jpeg" alt="Project 1" class="squre-img w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Project Title 1</h3>
+                        <p>Developed and implemented a [type of system/application] to streamline [process/function].</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="project2.jpeg" alt="Project 2" class="squre-img w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Project Title 2</h3>
+                        <p>Implemented a robust cybersecurity solution to protect sensitive data and prevent cyber threats.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="project3.jpeg" alt="Project 3" class="squre-img w-32 h-32 mx-auto mb-4">
+                        <h3 class="text-xl font-bold mb-2">Project Title 3</h3>
+                        <p>Migrated existing infrastructure to the cloud, improving performance and reducing maintenance costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-12 lavender-bg">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 lavender-text">Contact Me</h2>
+                <p>Get in touch!</p>
+            </div>
+        </section>
+    </div>
+
+
+    <footer class="bg-gray-800 p-4 text-center text-white">
+        <p>&copy; 2025 Hemal Patel</p>
+    </footer>
+
+</body>
+
+</html>
