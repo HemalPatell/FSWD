@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* ... (CSS styles from previous example) ... */
+    </style>
+</head>
+<body class="bg-primary font-sans">
+
+    <div class="flex h-screen">
+        <aside class="w-64 bg-primary shadow-md">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-black">Dashboard</h2>
+            </div>
+            <ul class="list-reset">
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Dashboard</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Users</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Products</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto p-6">
+            <div class="container mx-auto">
+                <h1 class="text-3xl font-bold text-white mb-4">Overview</h1>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="card rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-bold card-title mb-2">Total Users</h2>
+                        <p class="text-2xl accent" id="totalUsers">1,250</p> </div>
+
+                    <div class="card rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-bold card-title mb-2">Sales</h2>
+                        <p class="text-2xl accent" id="totalSales">$10,500</p>
+                    </div>
+
+                    <div class="card rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-bold card-title mb-2">New Orders</h2>
+                        <p class="text-2xl accent" id="newOrders">250</p>
+                    </div>
+
+                    <div class="md:col-span-2 card rounded-lg shadow-md p-6 chart-container">
+                        <h2 class="text-xl font-bold card-title mb-2">Sales Chart</h2>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+
+                    <div class="card rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-bold card-title mb-2">Recent Activity</h2>
+                        <ul class="list-disc ml-4">
+                            <li><span class="text-secondary">User A</span> logged in</li>
+                            <li><span class="text-secondary">Product B</span> added</li>
+                            <li>Order #123 processed</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Sample Data (Replace with your actual data)
+        const totalUsers = 2345;
+        const totalSales = 45678;
+        const newOrders = 890;
+        const salesData = [
+            { label: 'Jan', value: 12000 },
+            { label: 'Feb', value: 19000 },
+            { label: 'Mar', value: 3000 },
+            { label: 'Apr', value: 5000 },
+            { label: 'May', value: 2000 },
+            { label: 'Jun', value: 30000 },
+        ];
+
+
+        // Update the HTML with the data
+        document.getElementById('totalUsers').textContent = totalUsers.toLocaleString();
+        document.getElementById('totalSales').textContent = "$" + totalSales.toLocaleString();
+        document.getElementById('newOrders').textContent = newOrders.toLocaleString();
+
+
+        // Chart.js code (modified for dynamic data)
+        const ctx = document.getElementById('salesChart');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: salesData.map(item => item.label), // Dynamic labels
+                datasets: [{
+                    label: 'Sales',
+                    data: salesData.map(item => item.value), // Dynamic data
+                    borderColor: '#0d9488',
+                    backgroundColor: 'rgba(13, 148, 136, 0.2)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                // ... (options from previous example)
+            }
+        });
+    </script>
+
+</body>
+</html>
